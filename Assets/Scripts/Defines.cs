@@ -16,6 +16,13 @@ public enum ETargetPriority
     First,
     Random,
 }
+public enum EnemyType
+{
+    None,
+    Basic,
+    Big,
+    Boss,
+}
 
 [Flags]
 public enum DiceEyes
@@ -41,6 +48,8 @@ public enum DiceEyes
     // 1 << i
     // index => 
 }
+
+
 
 [Serializable]
 public struct DiceStatInfo
@@ -111,6 +120,26 @@ public struct DiceContainerPosition
     // { }
 
     public int Index => Defines.BoardSize.x * y + x;
+}
+
+public struct EnemyStatInfo
+{
+    public EnemyStatInfo(float hp, float spd)
+    {
+        this.hp = hp;
+        this.spd = spd;
+    }
+
+    [Range(0, 5000)]
+    public float hp;
+    [Range(0, 10)]
+    public float spd;
+
+    //public static EnemyStatInfo operator- (EnemyStatInfo op1, float op2)
+    //{
+    //    return new EnemyStatInfo(op1.hp)
+    //}
+    //연산자를 쓰면 둘다 바꿔야하는데 안쓰는게 맞을것인가...
 }
 
 [Serializable]
