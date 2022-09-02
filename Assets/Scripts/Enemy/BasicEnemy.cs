@@ -9,5 +9,4 @@ public class BasicEnemy : Enemy
         base.OnEnable();
     }
 
-
 }
