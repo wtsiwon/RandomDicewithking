@@ -30,6 +30,7 @@ public class Dice : MonoBehaviour
             diceEyes = value;
             ShowDiceEyes();
 
+            #region kings
             //var con1 = container.GetNear(Direction.Up);
             //var con2 = container.GetNear(Direction.Down);
             //var con3 = container.GetNear(Direction.Right);
@@ -47,11 +48,14 @@ public class Dice : MonoBehaviour
             // Dice PowerUP Level -> DiceManager
             // ObjectManager -> List
             // CalDiceStatByEyeCount() + (PowerUp Stat) -> DiceManager + Default Stat + container buff
+            #endregion
         }
     }
 
     private void Update()
     {
+
+        #region Inputs
         //if (Input.GetKeyDown(KeyCode.Alpha1))
         //    diceEyes = DiceEyes.One;
         //if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -70,6 +74,27 @@ public class Dice : MonoBehaviour
         //{
         //    ShowDiceEyes();
         //} 
+        #endregion
+    }
+
+    private IEnumerator IAttack()
+    {
+        float atkSpd;
+        while (true)
+        {
+            //죽었을때 멈춤
+            //게임 끝났을때 멈춤
+            atkSpd = 1 / (data.diceStatInfo.defaultAttackSpeed
+            * ((data.diceIncrementalValueByEyeCount.increaseAttackSpeed / 100)
+            + (data.dicePowerUpIncrementalValue.increaseAttackSpeed / 100)));
+            yield return new WaitForSeconds(atkSpd);
+        }
+
+
+    }
+    private void Attack()
+    {
+
     }
 
     // 눈금 스텟 증가량 반환됨
