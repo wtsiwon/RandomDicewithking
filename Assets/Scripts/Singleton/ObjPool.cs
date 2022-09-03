@@ -32,11 +32,28 @@ public class ObjPool : Singleton<ObjPool>
 
         PoolingObj origin = originObject[(int)poolType];
 
+        if(queue.Count > 0)
+        {
+            go = queue.Dequeue();
+        }
+        else
+        {
+            go = Instantiate(go);
+
+            
+        }
 
 
 
-        return null;
+        return go;
     }
+
+
+
+
+
+
+
 
     public void Return()
     {

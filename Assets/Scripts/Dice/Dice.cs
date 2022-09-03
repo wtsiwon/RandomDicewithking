@@ -16,10 +16,13 @@ public class Dice : PoolingObj
         }
     }
 
+
     // gameObject <-> transfrom 의 관계처럼 이어주면
     public Container container;
 
     public List<GameObject> eyeList;
+
+    public EPoolType poolType;
 
     private DiceAttacker diceAttacker;
 

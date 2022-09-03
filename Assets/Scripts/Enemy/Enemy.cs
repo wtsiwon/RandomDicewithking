@@ -6,6 +6,10 @@ public class Enemy : PoolingObj
 {
     protected float hp;
     protected float spd;
+
+    public EPoolType poolType;
+
+    public static bool isEnemy = true;
     protected float Hp
     {
         get { return hp; }
