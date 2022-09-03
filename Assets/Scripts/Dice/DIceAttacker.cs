@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class DiceAttacker : MonoBehaviour, IAttack
 {
-    
-
-
-
 
 
     public void Attack()

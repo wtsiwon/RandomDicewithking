@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dice : MonoBehaviour
+public class Dice : PoolingObj
 {
     [SerializeField]
     private DiceData data;
@@ -20,6 +20,8 @@ public class Dice : MonoBehaviour
     public Container container;
 
     public List<GameObject> eyeList;
+
+    private DiceAttacker diceAttacker;
 
     private DiceEyes diceEyes;
     public DiceEyes DiceEyes
@@ -51,7 +53,12 @@ public class Dice : MonoBehaviour
             #endregion
         }
     }
+    private void Start()
+    {
+        diceAttacker = GetComponent<DiceAttacker>();
 
+        
+    }
     private void Update()
     {
 
@@ -84,18 +91,17 @@ public class Dice : MonoBehaviour
         {
             //죽었을때 멈춤
             //게임 끝났을때 멈춤
+            #region 공격속도 계산식(초당 발사하는 양)
             atkSpd = 1 / (data.diceStatInfo.defaultAttackSpeed
             * ((data.diceIncrementalValueByEyeCount.increaseAttackSpeed / 100)
             + (data.dicePowerUpIncrementalValue.increaseAttackSpeed / 100)));
+            #endregion
             yield return new WaitForSeconds(atkSpd);
+            diceAttacker.Attack();
         }
 
-
     }
-    private void Attack()
-    {
 
-    }
 
     // 눈금 스텟 증가량 반환됨
     public DiceStatInfo CalDiceStatByEyeCount()

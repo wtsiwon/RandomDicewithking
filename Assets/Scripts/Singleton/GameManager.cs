@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
+
+
+    public bool isGameOver;
+
     public List<Array<Container>> Containers = new List<Array<Container>>();
     /// <summary>
     /// ·£´ıÀ¸·Î ¼ıÀÚ¸¦ »ÌÀÚ
@@ -16,4 +20,10 @@ public class GameManager : Singleton<GameManager>
         float rand = Random.Range(min, max);
         return rand;
     }
+
+    public void GameOver()
+    {
+
+    }
+
 }
