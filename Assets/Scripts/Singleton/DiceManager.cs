@@ -17,15 +17,14 @@ public class DiceManager : Singleton<DiceManager>
 
     private void Start()
     {
-        spawnBtn.onClick.AddListener(() =>
-        {
-            SpawnDice();
-        });
+        //spawnBtn.onClick.AddListener(() =>
+        //{
+        //    SpawnDice();
+        //});
     }
 
     private void SpawnDice()
     {
         Instantiate(Dice, transform.position, Quaternion.identity);
-
     }
 }

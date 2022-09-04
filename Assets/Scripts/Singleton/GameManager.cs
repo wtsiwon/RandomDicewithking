@@ -9,6 +9,7 @@ public class GameManager : Singleton<GameManager>
     public bool isGameOver;
 
     public List<Array<Container>> Containers = new List<Array<Container>>();
+
     /// <summary>
     /// ·£´ıÀ¸·Î ¼ıÀÚ¸¦ »ÌÀÚ
     /// </summary>

@@ -19,7 +19,7 @@ public class ObjPool : Singleton<ObjPool>
     [Tooltip("풀링할 오브젝트를 받아온다(Inspecter)")]
     private PoolingObj[] originObject;
 
-    public PoolingObj Get(EPoolType poolType, Vector3 pos)
+    public PoolingObj Get(EPoolType poolType, Transform transform)
     {
         PoolingObj go = null;
 
@@ -38,25 +38,36 @@ public class ObjPool : Singleton<ObjPool>
         }
         else
         {
-            go = Instantiate(go);
-
-            
+            go = Instantiate(origin);
         }
 
-
+        //부모 설정
+        go.transform.SetParent(transform);
+        go.transform.position = Vector3.zero;
+        go.gameObject.SetActive(true);
 
         return go;
     }
 
 
-
-
-
-
-
-
-    public void Return()
+    public PoolingObj GetEnemy(EPoolType poolType, Transform transform)
     {
+        return Get(poolType, transform);
+    }
 
+    public PoolingObj GetDice(EPoolType poolType, Transform transform)
+    {
+        return Get(poolType, transform);
+    }
+    public PoolingObj GetBullet(EPoolType poolType, Transform transform)
+    {
+        return Get(poolType, transform);
+    }
+
+
+    public void Return(EPoolType poolType, PoolingObj poolObj)
+    {
+        poolObj.gameObject.SetActive(false);
+        pool[poolType].Enqueue(poolObj);
     }
 }
