@@ -23,16 +23,16 @@ public class ObjPool : Singleton<ObjPool>
     {
         PoolingObj go = null;
 
-        if(pool.ContainsKey(poolType) == false)
+        if (pool.ContainsKey(poolType) == false)
         {
-            pool.Add(poolType,new Queue<PoolingObj>());
+            pool.Add(poolType, new Queue<PoolingObj>());
         }
 
         Queue<PoolingObj> queue = pool[poolType];
 
         PoolingObj origin = originObject[(int)poolType];
 
-        if(queue.Count > 0)
+        if (queue.Count > 0)
         {
             go = queue.Dequeue();
         }
@@ -50,21 +50,53 @@ public class ObjPool : Singleton<ObjPool>
     }
 
 
-    public PoolingObj GetEnemy(EPoolType poolType, Transform transform)
+    public PoolingObj GetEnemy(EEnemyType enemyType, Transform transform)
     {
-        return Get(poolType, transform);
+        PoolingObj obj = null;
+        Enemy enemy = null;
+        switch (enemyType)
+        {
+            case EEnemyType.Basic:
+                obj = Get(EPoolType.BasicEnemy, transform);
+                enemy = obj.GetComponent<BasicEnemy>();
+                break;
+            case EEnemyType.Boss:
+                obj = Get(EPoolType.BigEnemy, transform);
+                enemy = obj.GetComponent<BigEnemy>();
+                break;
+            default:
+                Debug.Assert(obj != null, "Enemy is null!");
+                break;
+        }
+
+        return enemy;
     }
 
-    public PoolingObj GetDice(EPoolType poolType, Transform transform)
+
+    //public PoolingObj GetBoss(Transform transform)
+    //{
+        
+    //}
+
+    public PoolingObj GetDice(EDiceType diceType, Transform transform)
     {
-        return Get(poolType, transform);
+
+        PoolingObj obj = Get(EPoolType.Dice, transform);
+        Dice dice = obj.GetComponent<Dice>();
+
+        dice.Data = DiceManager.Instance.deck[(int)diceType];
+
+        return dice;
     }
-    public PoolingObj GetBullet(EPoolType poolType, Transform transform)
+    public PoolingObj GetBullet(Transform transform)
     {
-        return Get(poolType, transform);
+        return Get(EPoolType.Bullet, transform);
     }
 
+    //public T Get<T>(EPoolType poolType, Transform transform)
+    //{
 
+    //}
     public void Return(EPoolType poolType, PoolingObj poolObj)
     {
         poolObj.gameObject.SetActive(false);

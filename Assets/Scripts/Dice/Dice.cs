@@ -26,8 +26,8 @@ public class Dice : PoolingObj
 
     private DiceAttacker diceAttacker;
 
-    private DiceEyes diceEyes;
-    public DiceEyes DiceEyes
+    private EDiceEyes diceEyes;
+    public EDiceEyes DiceEyes
     {
         get => diceEyes;
         set
@@ -113,25 +113,25 @@ public class Dice : PoolingObj
 
         switch (DiceEyes)
         {
-            case DiceEyes.One:
+            case EDiceEyes.One:
                 diceStatInfo += data.diceIncrementalValueByEyeCount * 1;
                 break;
-            case DiceEyes.Two:
+            case EDiceEyes.Two:
                 diceStatInfo += data.diceIncrementalValueByEyeCount * 2;
                 break;
-            case DiceEyes.Three:
+            case EDiceEyes.Three:
                 diceStatInfo += data.diceIncrementalValueByEyeCount * 3;
                 break;
-            case DiceEyes.Four:
+            case EDiceEyes.Four:
                 diceStatInfo += data.diceIncrementalValueByEyeCount * 4;
                 break;
-            case DiceEyes.Five:
+            case EDiceEyes.Five:
                 diceStatInfo += data.diceIncrementalValueByEyeCount * 5;
                 break;
-            case DiceEyes.Six:
+            case EDiceEyes.Six:
                 diceStatInfo += data.diceIncrementalValueByEyeCount * 6;
                 break;
-            case DiceEyes.Seven:
+            case EDiceEyes.Seven:
                 diceStatInfo += data.diceIncrementalValueByEyeCount * 7;
                 break;
         }

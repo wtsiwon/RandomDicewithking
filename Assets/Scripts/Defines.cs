@@ -16,7 +16,7 @@ public enum ETargetPriority
     First,
     Random,
 }
-public enum EnemyType
+public enum EEnemyType
 {
     None,
     Basic,
@@ -24,8 +24,15 @@ public enum EnemyType
     Boss,
 }
 
+public enum EBossType
+{
+    None,
+    Snake,
+    Silence,
+}
+
 [Flags]
-public enum DiceEyes
+public enum EDiceEyes
 {
     // enum => int
     // enum(int) | enum(int)
