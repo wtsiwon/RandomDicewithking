@@ -8,12 +8,17 @@ public class DiceManager : Singleton<DiceManager>
 {
     public List<DiceData> deck = new List<DiceData>();
 
-    public int sp;
+    public int currentHaveSp;
+    public int currentNeedSp;
+
+    private int diceSpawnCount;
 
     [SerializeField]
     private Button spawnBtn;
     [SerializeField]
     private Dice Dice;
+
+
 
     private void Start()
     {
@@ -28,6 +33,8 @@ public class DiceManager : Singleton<DiceManager>
         GameManager.Instance.DiscriminateContainer();
         ObjPool.Instance.GetDice(RandomDiceType(),
             RandContainer(GameManager.Instance.selectContainers));
+
+        diceSpawnCount++;
     }
 
     private Container RandContainer(List<Container> cons)

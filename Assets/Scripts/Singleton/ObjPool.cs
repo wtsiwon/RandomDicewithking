@@ -60,16 +60,17 @@ public class ObjPool : Singleton<ObjPool>
             case EEnemyType.Basic:
                 obj = Get(EPoolType.BasicEnemy, transform);
                 enemy = obj.GetComponent<BasicEnemy>();
+                //enemy.SetEnemy(hp, spd);
                 break;
             case EEnemyType.Boss:
                 obj = Get(EPoolType.BigEnemy, transform);
                 enemy = obj.GetComponent<BigEnemy>();
+                //enemy.SetEnemy(hp, spd);
                 break;
             default:
                 Debug.Assert(obj != null, "Enemy is null!");
                 break;
         }
-
         return enemy;
     }
 

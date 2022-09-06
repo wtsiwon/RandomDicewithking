@@ -44,15 +44,14 @@ public class Enemy : PoolingObj
         rect = GetComponent<RectTransform>();
         rb = GetComponent<Rigidbody2D>();
 
-        #region SetStartSpd
-        rb.velocity = Vector2.up * spd;
-
-        #endregion
+        
     }
 
     protected virtual void OnEnable()
     {
-        //SetEnemy(hp계산식, spd계산식);
+        #region SetStartSpd
+        Direction(Vector2.up);
+        #endregion
     }
     public void SetEnemy(float hp, float spd)
     {
@@ -83,9 +82,18 @@ public class Enemy : PoolingObj
 
     protected void Positions()
     {
-        if(rect.position == firstTurnPos || rect.position == secondTurnPos)
+        if(rect.localPosition == firstTurnPos)
         {
-            rect.rotation = Quaternion.Euler(0, 0, turnAngle);
+            Direction(Vector2.right);
         }
+        else if(rect.localPosition == secondTurnPos)
+        {
+            Direction(Vector2.down);
+        }
+    }
+
+    protected void Direction(Vector2 dir)
+    {
+        rb.velocity = dir * spd;
     }
 }
