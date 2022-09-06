@@ -38,6 +38,7 @@ public class GameManager : Singleton<GameManager>
     /// </summary>
     public void DiscriminateContainer()
     {
+        selectContainers.Clear();
         for (int i = 0; i < MAXX; i++)
         {
             for (int j = 0; j < MAXY; j++)

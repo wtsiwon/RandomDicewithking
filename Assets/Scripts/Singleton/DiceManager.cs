@@ -26,13 +26,14 @@ public class DiceManager : Singleton<DiceManager>
     private void SpawnDice()
     {
         GameManager.Instance.DiscriminateContainer();
-        ObjPool.Instance.GetDice(RandomDiceType(),RandContainer(GameManager.Instance.selectContainers));
+        ObjPool.Instance.GetDice(RandomDiceType(),
+            RandContainer(GameManager.Instance.selectContainers));
     }
 
-    private Transform RandContainer(List<Container> cons)
+    private Container RandContainer(List<Container> cons)
     {
         int rand = Random.Range(0, cons.Count);
-        return cons[rand].transform;
+        return cons[rand];
     }
 
     private EDiceType RandomDiceType()

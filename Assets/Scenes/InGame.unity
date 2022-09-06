@@ -168,6 +168,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originObject:
   - {fileID: 3752592553937097204, guid: a96bfe1b3566d0749b21141609b391f8, type: 3}
+  - {fileID: 3752592553937097204, guid: a96bfe1b3566d0749b21141609b391f8, type: 3}
+  - {fileID: 3752592553937097204, guid: a96bfe1b3566d0749b21141609b391f8, type: 3}
+  - {fileID: 3773868020868442932, guid: c45ed0fc83dff9f43ade337522aeffc9, type: 3}
+  - {fileID: 3752592553937097204, guid: a96bfe1b3566d0749b21141609b391f8, type: 3}
+  - {fileID: 3752592553937097204, guid: a96bfe1b3566d0749b21141609b391f8, type: 3}
+  - {fileID: 3752592553937097204, guid: a96bfe1b3566d0749b21141609b391f8, type: 3}
 --- !u!1 &58494569
 GameObject:
   m_ObjectHideFlags: 0
@@ -2697,6 +2703,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 62a3e2ef0c9d90842b85e571d349e23f, type: 2}
   - {fileID: 11400000, guid: 5933d07f4a8754141939927996cad02a, type: 2}
   - {fileID: 11400000, guid: c2467a55949a6694d9e3a137b12b6620, type: 2}
+  - {fileID: 11400000, guid: 2d937470367256d4f80f510dab257fad, type: 2}
+  - {fileID: 11400000, guid: bb5365623c13c384692f7447ba376c3f, type: 2}
+  - {fileID: 11400000, guid: bb5365623c13c384692f7447ba376c3f, type: 2}
   sp: 0
   spawnBtn: {fileID: 919073838}
   Dice: {fileID: 3773868020868442932, guid: c45ed0fc83dff9f43ade337522aeffc9, type: 3}

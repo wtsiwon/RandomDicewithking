@@ -43,7 +43,8 @@ public class ObjPool : Singleton<ObjPool>
 
         //부모 설정
         go.transform.SetParent(transform);
-        go.transform.position = Vector3.zero;
+        go.transform.localScale = Vector3.one;
+        go.transform.localPosition = Vector3.zero;
         go.gameObject.SetActive(true);
 
         return go;
@@ -72,17 +73,20 @@ public class ObjPool : Singleton<ObjPool>
         return enemy;
     }
 
-
     //public PoolingObj GetBoss(Transform transform)
     //{
         
     //}
 
-    public PoolingObj GetDice(EDiceType diceType, Transform transform)
+    public PoolingObj GetDice(EDiceType diceType, Container container)
     {
 
-        PoolingObj obj = Get(EPoolType.Dice, transform);
+        PoolingObj obj = Get(EPoolType.Dice, container.transform);
         Dice dice = obj.GetComponent<Dice>();
+
+        container.Dice = dice;
+        dice.container = container;
+        dice.DiceEyes = EDiceEyes.One;
 
         dice.Data = DiceManager.Instance.deck[(int)diceType];
 

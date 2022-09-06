@@ -34,7 +34,6 @@ public class Dice : PoolingObj
         {
             diceEyes = value;
             ShowDiceEyes();
-
             #region kings
             //var con1 = container.GetNear(Direction.Up);
             //var con2 = container.GetNear(Direction.Down);
