@@ -24,8 +24,6 @@ public class Dice : PoolingObj
 
     public List<GameObject> eyeList;
 
-    public EPoolType poolType;
-
     private DiceAttacker diceAttacker;
 
     private EDiceEyes diceEyes;
@@ -137,7 +135,6 @@ public class Dice : PoolingObj
                 diceStatInfo += data.diceIncrementalValueByEyeCount * 7;
                 break;
         }
-
         return diceStatInfo;
     }
 
@@ -151,5 +148,10 @@ public class Dice : PoolingObj
                 eyeList[i].gameObject.SetActive(true);
             }
         }
+    }
+
+    private void Return()
+    {
+        base.Die();
     }
 }

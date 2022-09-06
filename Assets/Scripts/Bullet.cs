@@ -10,11 +10,23 @@ public class Bullet : PoolingObj
     {
 
     }
+
+    public void SetBullet(float dmg, Enemy target)
+    {
+        this.dmg = dmg;
+        this.target = target;
+    }
+    
     private void Update()
     {
         if(target == null)
         {
-            
+            Return();
         }
+    }
+
+    private void Return()
+    {
+        base.Die();
     }
 }

@@ -13,6 +13,4 @@ public class PoolingObj : BaseAll
     {
         ObjPool.Instance.Return(poolType, this);
     }
-
-
 }
