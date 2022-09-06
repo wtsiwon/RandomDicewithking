@@ -168,8 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originObject:
   - {fileID: 3752592553937097204, guid: a96bfe1b3566d0749b21141609b391f8, type: 3}
-  - {fileID: 3773868020868442932, guid: 653f6c3a9be6a1746b0427bdaa56bcaa, type: 3}
-  - {fileID: 3773868020868442932, guid: 653f6c3a9be6a1746b0427bdaa56bcaa, type: 3}
+  - {fileID: 1895391583420536907, guid: 653f6c3a9be6a1746b0427bdaa56bcaa, type: 3}
+  - {fileID: 1895391583420536907, guid: 653f6c3a9be6a1746b0427bdaa56bcaa, type: 3}
   - {fileID: 3773868020868442932, guid: c45ed0fc83dff9f43ade337522aeffc9, type: 3}
   - {fileID: 3752592553937097204, guid: a96bfe1b3566d0749b21141609b391f8, type: 3}
   - {fileID: 3752592553937097204, guid: a96bfe1b3566d0749b21141609b391f8, type: 3}
@@ -1372,7 +1372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b1f61aecc538ab4ebc9dc80a63f4db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
+  spawnPoint: {fileID: 2079095163}
 --- !u!1 &904967272
 GameObject:
   m_ObjectHideFlags: 0
