@@ -16,7 +16,7 @@ public class ObjPool : Singleton<ObjPool>
     public Dictionary<EPoolType, Queue<PoolingObj>> pool = new Dictionary<EPoolType, Queue<PoolingObj>>();
 
     [SerializeField]
-    [Tooltip("풀링할 오브젝트를 받아온다(Inspecter)")]
+    [Tooltip("풀링할 오브젝트를 받아온다(Inspecter),Bullet,BasicEnemy,BigEnemy,Dice,Effect")]
     private PoolingObj[] originObject;
 
     public PoolingObj Get(EPoolType poolType, Transform transform)

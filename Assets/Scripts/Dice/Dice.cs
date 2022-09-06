@@ -61,6 +61,11 @@ public class Dice : PoolingObj
         diceAttacker = GetComponent<DiceAttacker>();
         #endregion
     }
+
+    private void OnDisable()
+    {
+        Return();
+    }
     private void Update()
     {
         #region Inputs
