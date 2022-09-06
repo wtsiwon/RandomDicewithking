@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Dice : PoolingObj
 {
+    public bool isActive = true;
+
     [SerializeField]
     private DiceData data;
     public DiceData Data
@@ -56,15 +58,14 @@ public class Dice : PoolingObj
             #endregion
         }
     }
-    private void Start()
+    private void OnEnable()
     {
+        #region GetComponents
         diceAttacker = GetComponent<DiceAttacker>();
-
-        
+        #endregion
     }
     private void Update()
     {
-
         #region Inputs
         //if (Input.GetKeyDown(KeyCode.Alpha1))
         //    diceEyes = DiceEyes.One;
@@ -92,8 +93,9 @@ public class Dice : PoolingObj
         float atkSpd;
         while (true)
         {
-            //죽었을때 멈춤
-            //게임 끝났을때 멈춤
+            if (isActive == false) yield return null;
+            if (GameManager.Instance.isGameOver == true) yield return null;
+
             #region 공격속도 계산식(초당 발사하는 양)
             atkSpd = 1 / (data.diceStatInfo.defaultAttackSpeed
             * ((data.diceIncrementalValueByEyeCount.increaseAttackSpeed / 100)
