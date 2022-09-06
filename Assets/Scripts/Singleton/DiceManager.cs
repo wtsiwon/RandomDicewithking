@@ -25,6 +25,19 @@ public class DiceManager : Singleton<DiceManager>
 
     private void SpawnDice()
     {
-        Instantiate(Dice, transform.position, Quaternion.identity);
+        ObjPool.Instance.GetDice(RandomDiceType(),RandContainer(GameManager.Instance.selectContainers));
     }
+
+    private Transform RandContainer(List<Container> cons)
+    {
+        int rand = Random.Range(0, cons.Count);
+        return cons[rand].transform;
+    }
+
+    private EDiceType RandomDiceType()
+    {
+        return (EDiceType)GameManager.Instance.RandNumint(0, deck.Count);
+    }
+
+    
 }

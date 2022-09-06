@@ -5,10 +5,9 @@ using System.Linq;
 
 public class DiceAttacker : MonoBehaviour, IAttack
 {
+    public Enemy targetEnemy;
     public void Attack()
     {
-        var target = TargetEnemy.Instance.targetEnemyList.FirstOrDefault();
-
-
+        targetEnemy = TargetEnemy.Instance.targetEnemyList.FirstOrDefault();
     }
 }
