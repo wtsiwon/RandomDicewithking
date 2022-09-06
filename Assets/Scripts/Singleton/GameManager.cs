@@ -49,7 +49,6 @@ public class GameManager : Singleton<GameManager>
             }
         }
     }
-    
     /// <summary>
     /// Container에 Dice가 있는지 확인하는 함수
     /// </summary>

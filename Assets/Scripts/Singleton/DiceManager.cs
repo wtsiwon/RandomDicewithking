@@ -17,14 +17,15 @@ public class DiceManager : Singleton<DiceManager>
 
     private void Start()
     {
-        //spawnBtn.onClick.AddListener(() =>
-        //{
-        //    SpawnDice();
-        //});
+        spawnBtn.onClick.AddListener(() =>
+        {
+            SpawnDice();
+        });
     }
 
     private void SpawnDice()
     {
+        GameManager.Instance.DiscriminateContainer();
         ObjPool.Instance.GetDice(RandomDiceType(),RandContainer(GameManager.Instance.selectContainers));
     }
 
