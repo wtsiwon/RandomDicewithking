@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7acf5321008eba14eaa3a4541b20f712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dice: {fileID: 0}
+  dice: {fileID: 3773868020868442932}
 --- !u!1 &3773868020097481722
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,7 +626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa96e1f07b2e15c4391e20c4e72fcf40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolType: 0
+  poolType: 3
   isActive: 1
   data: {fileID: 11400000, guid: 62a3e2ef0c9d90842b85e571d349e23f, type: 2}
   container: {fileID: 0}

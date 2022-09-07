@@ -18,8 +18,7 @@ public class Dice : PoolingObj
         }
     }
 
-
-    // gameObject <-> transfrom 의 관계처럼 이어주면
+    //gameObject <-> transfrom 의 관계처럼 이어주면
     public Container container;
 
     public List<GameObject> eyeList;
@@ -55,11 +54,15 @@ public class Dice : PoolingObj
             #endregion
         }
     }
+
+    private void Start()
+    {
+        print("용");
+        StartCoroutine(Wait());
+    }
     private void OnEnable()
     {
-        #region GetComponents
-        diceAttacker = GetComponent<DiceAttacker>();
-        #endregion
+        Wait();
     }
 
     private void OnDisable()
@@ -90,6 +93,14 @@ public class Dice : PoolingObj
         #endregion
     }
 
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.01f);
+        print("a");
+        StartCoroutine(IAttack());
+
+    }
+
     private IEnumerator IAttack()
     {
         float atkSpd;
@@ -98,14 +109,16 @@ public class Dice : PoolingObj
             if (isActive == false) yield return null;
             if (GameManager.Instance.isGameOver == true) yield return null;
 
+            print(data.diceStatInfo.defaultAttackSpeed);
+            print((data.diceStatInfo.defaultAttackSpeed / 100) + (data.dicePowerUpIncrementalValue.increaseAttackSpeed / 100));
+
             #region 공격속도 계산식(초당 발사하는 양)
-            atkSpd = 1 / (data.diceStatInfo.defaultAttackSpeed
-            * ((data.diceIncrementalValueByEyeCount.increaseAttackSpeed / 100)
-            + (data.dicePowerUpIncrementalValue.increaseAttackSpeed / 100)));
+            atkSpd = 1 / data.diceStatInfo.defaultAttackSpeed * ((data.diceStatInfo.defaultAttackSpeed / 100) + (data.dicePowerUpIncrementalValue.increaseAttackSpeed / 100));
             #endregion
+
+            print(atkSpd);
             yield return new WaitForSeconds(atkSpd);
             diceAttacker.Attack();
-            
         }
 
     }

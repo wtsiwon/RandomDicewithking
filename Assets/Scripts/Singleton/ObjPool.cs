@@ -90,6 +90,7 @@ public class ObjPool : Singleton<ObjPool>
         container.Dice = dice;
         dice.container = container;
         dice.DiceEyes = EDiceEyes.One;
+        dice.poolType = EPoolType.Dice;
 
         dice.Data = DiceManager.Instance.deck[(int)diceType];
 

@@ -18,7 +18,7 @@ public class DiceAttacker : MonoBehaviour, IAttack
     public void Attack()
     {
         //targetEnemy = TargetEnemy.Instance.targetEnemyList.FirstOrDefault();
-
+        print("น฿ป็!");
         if (TargetEnemy.Instance.targetEnemyList.Count <= 0) return;
 
         var target = TargetEnemy.Instance.targetEnemyList[0];
