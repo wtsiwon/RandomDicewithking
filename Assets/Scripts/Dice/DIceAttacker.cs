@@ -27,6 +27,4 @@ public class DiceAttacker : MonoBehaviour, IAttack
 
         ObjPool.Instance.GetBullet(transform).SetBullet(dice_stat.defaultAttackDamage, target);
     }
-
-    
 }

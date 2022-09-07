@@ -58,11 +58,11 @@ public class Dice : PoolingObj
     private void Start()
     {
         print("용");
-        StartCoroutine(Wait());
+        //StartCoroutine(Wait());
     }
     private void OnEnable()
     {
-        Wait();
+        StartCoroutine(IAttack());
     }
 
     private void OnDisable()
