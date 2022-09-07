@@ -41,6 +41,8 @@ public class ObjPool : Singleton<ObjPool>
             go = Instantiate(origin);
         }
 
+        go.Get();
+
         //부모 설정
         go.transform.SetParent(transform);
         go.transform.localScale = Vector3.one;
@@ -93,9 +95,9 @@ public class ObjPool : Singleton<ObjPool>
 
         return dice;
     }
-    public PoolingObj GetBullet(Transform transform)
+    public Bullet GetBullet(Transform transform)
     {
-        return Get(EPoolType.Bullet, transform);
+        return Get(EPoolType.Bullet, transform).GetComponent<Bullet>();
     }
 
     //public T Get<T>(EPoolType poolType, Transform transform)

@@ -24,7 +24,7 @@ public class Dice : PoolingObj
 
     public List<GameObject> eyeList;
 
-    private DiceAttacker diceAttacker;
+    public DiceAttacker diceAttacker;
 
     private EDiceEyes diceEyes;
     public EDiceEyes DiceEyes
@@ -51,7 +51,7 @@ public class Dice : PoolingObj
             // Attacker.Set~(~,~,~) 이거를 값이 변하면 호출해서 값을 갱신
             // Dice PowerUP Level -> DiceManager
             // ObjectManager -> List
-            // CalDiceStatByEyeCount() + (PowerUp Stat) -> DiceManager + Default Stat + container buff
+            // CalDiceStatByEyeCount() + {(PowerUp Stat) -> DiceManager} + Default Stat + container buff
             #endregion
         }
     }
@@ -105,6 +105,7 @@ public class Dice : PoolingObj
             #endregion
             yield return new WaitForSeconds(atkSpd);
             diceAttacker.Attack();
+            
         }
 
     }
@@ -157,5 +158,6 @@ public class Dice : PoolingObj
     private void Return()
     {
         base.Die();
+        DiceManager.Instance.diceSpawnCount--;
     }
 }

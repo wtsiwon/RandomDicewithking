@@ -76,6 +76,11 @@ public struct DiceStatInfo
     {
         return new DiceStatInfo(a.defaultAttackDamage + b.increaseAttackSpeed, a.defaultAttackSpeed + b.increaseAttackSpeed);
     }
+
+    public static DiceStatInfo operator +(DiceStatInfo a, DiceStatInfo b)
+    {
+        return new DiceStatInfo(a.defaultAttackDamage + b.defaultAttackDamage, a.defaultAttackSpeed + b.defaultAttackSpeed);
+    }
 }
 
 public struct DiceIncrementalValue

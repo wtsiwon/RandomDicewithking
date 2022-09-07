@@ -11,14 +11,12 @@ public class DiceManager : Singleton<DiceManager>
     public int currentHaveSp;
     public int currentNeedSp;
 
-    private int diceSpawnCount;
+    public int diceSpawnCount;
 
     [SerializeField]
     private Button spawnBtn;
     [SerializeField]
     private Dice Dice;
-
-
 
     private void Start()
     {
@@ -30,6 +28,8 @@ public class DiceManager : Singleton<DiceManager>
 
     private void SpawnDice()
     {
+        if (diceSpawnCount >= 15) return;
+
         GameManager.Instance.DiscriminateContainer();
         ObjPool.Instance.GetDice(RandomDiceType(),
             RandContainer(GameManager.Instance.selectContainers));

@@ -7,5 +7,4 @@ public class TargetEnemy : Singleton<TargetEnemy>
 
     public List<Enemy> targetEnemyList = new List<Enemy>();
 
-
 }

@@ -11,12 +11,11 @@ public class BasicEnemy : Enemy
     protected override void Start()
     {
         base.Start();
-        Debug.Log("¿¿æ÷");
-
     }
 
     protected override void Update()
     {
+        Positions();
         base.Update();
     }
 

@@ -13,7 +13,7 @@ public class Enemy : PoolingObj
     public static bool isEnemy = true;
 
     #region TurnPoses
-    private Vector3 firstTurnPos = new Vector3(0, 1000, 0);
+    private Vector3 firstTurnPos = new Vector3(-50, 1000, 0);
 
     private Vector3 secondTurnPos = new Vector3(1500, 1000, 0);
     #endregion
@@ -74,6 +74,7 @@ public class Enemy : PoolingObj
     protected void Return()
     {
         base.Die();
+        TargetEnemy.Instance.targetEnemyList.Remove(this);
     }
     protected virtual void Update()
     {
