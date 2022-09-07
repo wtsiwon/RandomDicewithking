@@ -8,5 +8,16 @@ public class BasicEnemy : Enemy
     {
         base.OnEnable();
     }
+    protected override void Start()
+    {
+        base.Start();
+        Debug.Log("¿¿æ÷");
+
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+    }
 
 }

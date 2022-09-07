@@ -18,8 +18,6 @@ public class Enemy : PoolingObj
     private Vector3 secondTurnPos = new Vector3(1500, 1000, 0);
     #endregion
 
-    private float turnAngle = 90f;
-
     protected RectTransform rect;
     protected Rigidbody2D rb;
     protected float Hp
@@ -40,15 +38,17 @@ public class Enemy : PoolingObj
 
     protected virtual void Start()
     {
-
+    }
+    protected void GetComponents()
+    {
         rect = GetComponent<RectTransform>();
         rb = GetComponent<Rigidbody2D>();
-
-        
     }
 
     protected virtual void OnEnable()
     {
+        GetComponents();
+
         #region SetStartSpd
         Direction(Vector2.up);
         #endregion
@@ -75,10 +75,10 @@ public class Enemy : PoolingObj
     {
         base.Die();
     }
-    protected void Update()
+    protected virtual void Update()
     {
         Positions();
-    }
+    } 
 
     protected void Positions()
     {

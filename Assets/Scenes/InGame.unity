@@ -2710,7 +2710,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2d937470367256d4f80f510dab257fad, type: 2}
   - {fileID: 11400000, guid: bb5365623c13c384692f7447ba376c3f, type: 2}
   - {fileID: 11400000, guid: bb5365623c13c384692f7447ba376c3f, type: 2}
-  sp: 0
+  currentHaveSp: 0
+  currentNeedSp: 0
   spawnBtn: {fileID: 919073838}
   Dice: {fileID: 3773868020868442932, guid: c45ed0fc83dff9f43ade337522aeffc9, type: 3}
 --- !u!1 &1878718855
@@ -3449,6 +3450,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 150, y: 480}
+  m_AnchoredPosition: {x: 150, y: 550}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
