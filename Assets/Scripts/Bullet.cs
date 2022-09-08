@@ -14,7 +14,13 @@ public class Bullet : PoolingObj
         this.dmg = dmg;
         this.target = target;
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("BasicEnemy"))
+        {
+            Die();
+        }
+    }
     private void Start()
     {
 
