@@ -115,7 +115,7 @@ public class Dice : PoolingObj
             #region 공격속도 계산식(초당 발사하는 양)
             atkSpd = 1 / data.diceStatInfo.defaultAttackSpeed * ((data.diceStatInfo.defaultAttackSpeed / 100) + (data.dicePowerUpIncrementalValue.increaseAttackSpeed / 100));
             #endregion
-
+            atkSpd = Mathf.Clamp(atkSpd, 0.1f, 3f);
             print(atkSpd);
             yield return new WaitForSeconds(atkSpd);
             diceAttacker.Attack();

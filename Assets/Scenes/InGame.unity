@@ -167,13 +167,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originObject:
-  - {fileID: 3752592553937097204, guid: a96bfe1b3566d0749b21141609b391f8, type: 3}
+  - {fileID: 4318042598102674835, guid: 6c8d19e8017461f41a380b62ca8b471a, type: 3}
   - {fileID: 1895391583420536907, guid: 653f6c3a9be6a1746b0427bdaa56bcaa, type: 3}
   - {fileID: 1895391583420536907, guid: 653f6c3a9be6a1746b0427bdaa56bcaa, type: 3}
   - {fileID: 3773868020868442932, guid: c45ed0fc83dff9f43ade337522aeffc9, type: 3}
-  - {fileID: 3752592553937097204, guid: a96bfe1b3566d0749b21141609b391f8, type: 3}
-  - {fileID: 3752592553937097204, guid: a96bfe1b3566d0749b21141609b391f8, type: 3}
-  - {fileID: 3752592553937097204, guid: a96bfe1b3566d0749b21141609b391f8, type: 3}
 --- !u!1 &71414224
 GameObject:
   m_ObjectHideFlags: 0
@@ -2712,6 +2709,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bb5365623c13c384692f7447ba376c3f, type: 2}
   currentHaveSp: 0
   currentNeedSp: 0
+  diceSpawnCount: 0
   spawnBtn: {fileID: 919073838}
   Dice: {fileID: 3773868020868442932, guid: c45ed0fc83dff9f43ade337522aeffc9, type: 3}
 --- !u!1 &1878718855

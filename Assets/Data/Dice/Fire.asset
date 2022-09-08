@@ -16,4 +16,4 @@ MonoBehaviour:
   targetPriority: 0
   diceStatInfo:
     defaultAttackDamage: 10
-    defaultAttackSpeed: 3
+    defaultAttackSpeed: 1
