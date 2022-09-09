@@ -38,16 +38,18 @@ public class Enemy : PoolingObj
 
     protected virtual void Start()
     {
+        GetComponents();
     }
     protected void GetComponents()
     {
+        print("GetComponents");
         rect = GetComponent<RectTransform>();
         rb = GetComponent<Rigidbody2D>();
     }
 
     protected virtual void OnEnable()
     {
-        GetComponents();
+        //GetComponents();
 
         #region SetStartSpd
         Direction(Vector2.up);
@@ -83,7 +85,7 @@ public class Enemy : PoolingObj
 
     protected void Positions()
     {
-        if(rect.localPosition == firstTurnPos)
+        if(rect.localPosition.y == firstTurnPos.y)
         {
             Direction(Vector2.right);
         }

@@ -115,6 +115,7 @@ public class Dice : PoolingObj
             #region 공격속도 계산식(초당 발사하는 양)
             atkSpd = 1 / data.diceStatInfo.defaultAttackSpeed * ((data.diceStatInfo.defaultAttackSpeed / 100) + (data.dicePowerUpIncrementalValue.increaseAttackSpeed / 100));
             #endregion
+            //최대, 최소값
             atkSpd = Mathf.Clamp(atkSpd, 0.1f, 3f);
             print(atkSpd);
             yield return new WaitForSeconds(atkSpd);
@@ -156,6 +157,9 @@ public class Dice : PoolingObj
         return diceStatInfo;
     }
 
+    /// <summary>
+    /// 주사위 눈을 보여주는함수
+    /// </summary>
     public void ShowDiceEyes()
     {
         for (int i = 0; i < 4; i++)
