@@ -49,7 +49,7 @@ public class Enemy : PoolingObj
 
     protected virtual void OnEnable()
     {
-        //GetComponents();
+        GetComponents();
 
         #region SetStartSpd
         Direction(Vector2.up);

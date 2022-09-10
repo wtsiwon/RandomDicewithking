@@ -23,7 +23,7 @@ public class DiceAttacker : MonoBehaviour, IAttack
 
         var target = TargetEnemy.Instance.targetEnemyList[0];
 
-        var dice_stat = dice.CalDiceStatByEyeCount() + dice.Data.diceStatInfo + dice.container.buff;
+        var dice_stat = dice.CalDiceStatByEyeCount() + dice.Data.diceStatInfo + dice.container.buff + dice.Data.dicePowerUpIncrementalValue;
 
         ObjPool.Instance.GetBullet(transform).SetBullet(dice_stat.defaultAttackDamage, target);
     }
