@@ -6,7 +6,10 @@ using System;
 [CreateAssetMenu(menuName = "Data/Dice", fileName = "Dice", order = 0)]
 public class DiceData : ScriptableObject
 {
+    public int level;
+
     // 총알, 주사위 사진
+    //public Sprite image;
     public EDiceType diceType;
     public ETargetPriority targetPriority;
     public DiceStatInfo diceStatInfo;

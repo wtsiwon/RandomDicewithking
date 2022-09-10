@@ -58,7 +58,6 @@ public class Dice : PoolingObj
     private void Start()
     {
         print("용");
-        //StartCoroutine(Wait());
     }
     private void OnEnable()
     {
@@ -92,15 +91,6 @@ public class Dice : PoolingObj
         //} 
         #endregion
     }
-
-    private IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(0.01f);
-        print("a");
-        StartCoroutine(IAttack());
-
-    }
-
     private IEnumerator IAttack()
     {
         float atkSpd;

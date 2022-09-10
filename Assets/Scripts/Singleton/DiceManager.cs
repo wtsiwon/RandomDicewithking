@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class DiceManager : Singleton<DiceManager>
 {
-    public List<DiceData> deck = new List<DiceData>();
+    public List<DiceData> deck = new List<DiceData>(5);
 
     public int currentHaveSp;
     public int currentNeedSp;
@@ -17,13 +17,29 @@ public class DiceManager : Singleton<DiceManager>
     private Button spawnBtn;
     [SerializeField]
     private Dice Dice;
+    [SerializeField]
+    private Button[] powerUpBtns;
 
     private void Start()
     {
+        for (int i = 0; i < powerUpBtns.Length; i++)
+        {
+            int index = i;
+            powerUpBtns[index].onClick.AddListener(() =>
+            {
+                Powerup(index);
+            });
+        }
+
         spawnBtn.onClick.AddListener(() =>
         {
             SpawnDice();
         });
+    }
+
+    private void Powerup(int index)
+    {
+        
     }
 
     private void SpawnDice()
