@@ -2706,12 +2706,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c2467a55949a6694d9e3a137b12b6620, type: 2}
   - {fileID: 11400000, guid: 2d937470367256d4f80f510dab257fad, type: 2}
   - {fileID: 11400000, guid: bb5365623c13c384692f7447ba376c3f, type: 2}
-  - {fileID: 11400000, guid: bb5365623c13c384692f7447ba376c3f, type: 2}
   currentHaveSp: 0
   currentNeedSp: 0
   diceSpawnCount: 0
   spawnBtn: {fileID: 919073838}
   Dice: {fileID: 3773868020868442932, guid: c45ed0fc83dff9f43ade337522aeffc9, type: 3}
+  powerUpBtns: []
 --- !u!1 &1878718855
 GameObject:
   m_ObjectHideFlags: 0
