@@ -39,7 +39,7 @@ public class DiceManager : Singleton<DiceManager>
 
     private void Powerup(int index)
     {
-        
+        deck[index].dicePowerUpIncrementalValue.increaseAttackDamage * 
     }
 
     private void SpawnDice()
