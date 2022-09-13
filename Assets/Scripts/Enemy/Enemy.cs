@@ -12,10 +12,14 @@ public class Enemy : PoolingObj
 
     public static bool isEnemy = true;
 
+    //현재 positon의 인덱스
+    public int posIndex;
     #region TurnPoses
-    private Vector3 firstTurnPos = new Vector3(-50, 1000, 0);
+    private float firstTurnPosy = 1000f;
 
-    private Vector3 secondTurnPos = new Vector3(1500, 1000, 0);
+    private float secondTurnPosx = 1500f;
+
+    private Vector3 endPos = new Vector3(1500, -40, 0);
     #endregion
 
     protected RectTransform rect;
@@ -25,20 +29,17 @@ public class Enemy : PoolingObj
         get { return hp; }
         set
         {
-            if (hp > 0)
-            {
-                hp = value;
-            }
-            else
-            {
-                Return();
-            }
+            Damaged(value);
         }
+    }
+
+    protected void Awake()
+    {
+        GetComponents();
     }
 
     protected virtual void Start()
     {
-        GetComponents();
     }
     protected void GetComponents()
     {
@@ -49,7 +50,7 @@ public class Enemy : PoolingObj
 
     protected virtual void OnEnable()
     {
-        GetComponents();
+        SetEnemy();
 
         #region SetStartSpd
         Direction(Vector2.up);
@@ -60,7 +61,7 @@ public class Enemy : PoolingObj
         this.hp = hp;
         this.spd = spd;
     }
-
+    
     public void Damaged(float dmg)
     {
         if (hp > 0)
@@ -75,6 +76,7 @@ public class Enemy : PoolingObj
 
     protected void Return()
     {
+        print("들어가");
         base.Die();
         TargetEnemy.Instance.targetEnemyList.Remove(this);
     }
@@ -85,14 +87,19 @@ public class Enemy : PoolingObj
 
     protected void Positions()
     {
-        if(rect.localPosition.y >= firstTurnPos.y)
-        {
-            Direction(Vector2.right);
-        }
-        if(rect.localPosition.x >= secondTurnPos.x)
+        if(rect.localPosition.x >= secondTurnPosx)
         {
             Direction(Vector2.down);
         }
+        if(rect.localPosition.y >= firstTurnPosy)
+        {
+            Direction(Vector2.right);
+        }
+    }
+
+    protected void SetEnemy() 
+    {
+        posIndex = 0;
     }
 
     protected void Direction(Vector2 dir)

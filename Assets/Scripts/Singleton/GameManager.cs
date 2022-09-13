@@ -10,6 +10,8 @@ public class GameManager : Singleton<GameManager>
 
     public List<Container> selectContainers = new List<Container>();
 
+    public int life = 3;
+
     private const uint MAXX = 5;
     private const uint MAXY = 3;
     /// <summary>

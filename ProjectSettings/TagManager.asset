@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BasicEnemy
   - Bullet
+  - EndZone
   layers:
   - Default
   - TransparentFX

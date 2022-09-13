@@ -15,7 +15,6 @@ public class BasicEnemy : Enemy
 
     protected override void Update()
     {
-        Positions();
         base.Update();
     }
 
