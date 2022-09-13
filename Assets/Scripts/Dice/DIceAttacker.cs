@@ -22,6 +22,7 @@ public class DiceAttacker : MonoBehaviour, IAttack
         if (TargetEnemy.Instance.targetEnemyList.Count <= 0) return;
 
         var target = TargetEnemy.Instance.targetEnemyList[0];
+        if (target == null) return;
 
         var dice_stat = dice.CalDiceStatByEyeCount() + dice.Data.diceStatInfo + dice.container.buff + dice.Data.dicePowerUpIncrementalValue;
 

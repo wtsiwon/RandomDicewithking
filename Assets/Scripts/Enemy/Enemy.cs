@@ -85,11 +85,11 @@ public class Enemy : PoolingObj
 
     protected void Positions()
     {
-        if(rect.localPosition.y == firstTurnPos.y)
+        if(rect.localPosition.y >= firstTurnPos.y)
         {
             Direction(Vector2.right);
         }
-        else if(rect.localPosition == secondTurnPos)
+        if(rect.localPosition.x >= secondTurnPos.x)
         {
             Direction(Vector2.down);
         }
